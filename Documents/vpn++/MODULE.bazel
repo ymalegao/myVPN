@@ -1,0 +1,4 @@
+module(
+    name = "vpn_project",
+)
+bazel_dep(name = "boost.asio", version = "1.87.0")
