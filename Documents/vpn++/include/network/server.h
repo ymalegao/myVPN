@@ -1,5 +1,5 @@
 #pragma once
-#include <iostream> 
+#include <iostream>
 // #include "core.h"
 #include <stdio.h>
 #include <vector>
@@ -7,8 +7,9 @@
 #include <atomic>
 #include <boost/asio.hpp>
 #include <thread>
-#include "./protocol/include/packet.hpp"
+#include "protocol/packet.hpp"
 #include "session.h"
+#include "tunhandler.h"
 
 using boost::asio::ip::tcp;
 

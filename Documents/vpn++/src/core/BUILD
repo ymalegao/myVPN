@@ -4,6 +4,7 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         "//include/core:core_headers",
+        
         "@boost.asio//:boost.asio"
         ], 
 )

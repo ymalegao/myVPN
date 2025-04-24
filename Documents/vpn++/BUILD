@@ -3,12 +3,30 @@ cc_binary(
     srcs = ["src/main.cpp"],
     deps = [
         "//src/core:core",
-        "@boost.asio//:boost.asio"
+        "//src/network:network",
+        "@boost.asio//:boost.asio",
+
     ],
 )
 
 cc_binary(
-    name = "test_client_spammer",
-    srcs = ["test/test_client_spammer.cpp"],
-    deps = ["@boost.asio//:boost.asio"]
+    name = "test_client",
+    srcs = ["test/test_tun.cpp"],
+    deps = ["@boost.asio//:boost.asio",
+            "//src/protocol:protocol",
+            "//src/core:core",
+
+    ]
+)
+
+load("@hedron_compile_commands//:refresh_compile_commands.bzl", "refresh_compile_commands")
+
+refresh_compile_commands(
+    name = "refresh_compile_commands",
+    targets = [
+        "//:vpn_app",
+        "//:test_client",
+    ],
+    exclude_headers = "external",
+    exclude_external_sources = True,
 )

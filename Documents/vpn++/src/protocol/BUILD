@@ -1,10 +1,9 @@
 cc_library(
-    name ="network",
+    name = "protocol",
     srcs = glob(["*.cpp"]),
     visibility = ["//visibility:public"],
     deps = [
-        "//include/network:network_headers",
-        "//src/protocol:protocol",
+        "//include/protocol:protocol_headers",
         "@boost.asio//:boost.asio"
-        ], 
+        ],
 )

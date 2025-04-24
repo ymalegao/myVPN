@@ -12,6 +12,10 @@ class Packet{
             HELLO = 0x01,
             OK = 0x02,
             DATA = 0x03,
+            WELCOME = 0x04,
+            KEY_EXCHANGE = 0x05,
+            KEY_EXCHANGE_RESPONSE = 0x06,
+            READY = 0x07,
         };
 
         Packet(Type type, std::vector<uint8_t> payload);

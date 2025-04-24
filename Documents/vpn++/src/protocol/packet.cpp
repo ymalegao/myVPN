@@ -1,4 +1,4 @@
-#include "include/packet.hpp"
+#include "protocol/packet.hpp"
 #include <iostream>
 #include <boost/asio.hpp>
 
@@ -29,5 +29,7 @@ Packet Packet::from_bytes(const std::vector<uint8_t>& buffer){
 
     Type type = static_cast<Type>(buffer[0]);
     std::vector<uint8_t> payload(buffer.begin() + 1, buffer.end());
+    std::cout << "[Packet::from_bytes] Parsed type: " << static_cast<int>(type)
+              << ", payload size: " << payload.size() << std::endl;
     return Packet(type, payload);
 }
